@@ -22,7 +22,7 @@ const AffirmationPractice = () => {
     for (let id = 0; id < AFFIRMATION_GALLERY.length; id++) {
       const affermationData = AFFIRMATION_GALLERY[id].data;
       const affirmationToStart = affermationData.find(
-        (data) => data.id == Number(itemid)
+        (data) => data.id === Number(itemid)
       );
       if (affirmationToStart) {
         setAffirmation(affirmationToStart);
@@ -34,7 +34,7 @@ const AffirmationPractice = () => {
         return;
       }
     }
-  }, []);
+  }, [itemid]);
   return (
     <View className="flex-1">
       <ImageBackground

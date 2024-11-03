@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  ImageBackground,
-  StatusBar,
-} from "react-native";
+import { View, Text, ImageBackground, StatusBar } from "react-native";
 import beachImage from "@/assets/meditation-images/beach.webp";
 import CustomButton from "@/components/CustomButton";
 import { useRouter } from "expo-router";
@@ -34,7 +29,7 @@ const App = () => {
             </View>
             {/* button */}
             <CustomButton
-              handlePress={() => router.push("/nature-meditate")}
+              handlePress={() => router.push("/meditate")}
               title={"Get started"}
             />
             {/* status bar */}

@@ -11,13 +11,14 @@ import {
 } from "react-native";
 import MEDITATION_IMAGES from "@/constants/meditation-images";
 import { LinearGradient } from "expo-linear-gradient";
+import { router } from "expo-router";
 
 const NatureMeditate = () => {
   /** renders all the options in the Meditate tab  */
   function renderMeditationOptions({ item }: { item: MeditationType }) {
     return (
       <Pressable
-        onPress={() => console.warn("pressed")}
+        onPress={() => router.push(`/meditate/${item.id}`)}
         className="h-48 my-3 rounded-md overflow-hidden"
       >
         <ImageBackground

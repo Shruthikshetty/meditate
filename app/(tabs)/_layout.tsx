@@ -22,9 +22,9 @@ const TabsLayout = () => {
         }}
       />
       <Tabs.Screen
-        name="affermations"
+        name="affirmations"
         options={{
-          tabBarLabel: "Affermations",
+          tabBarLabel: "Affirmations",
           tabBarIcon: ({ color }) => (
             <BookIcon name="open-book" size={24} color={color} />
           ),

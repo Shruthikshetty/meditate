@@ -11,7 +11,9 @@ import {
 } from "react-native";
 import MEDITATION_IMAGES from "@/constants/meditation-images";
 import { LinearGradient } from "expo-linear-gradient";
+
 const NatureMeditate = () => {
+  /** renders all the options in the Meditate tab  */
   function renderMeditationOptions({ item }: { item: MeditationType }) {
     return (
       <Pressable

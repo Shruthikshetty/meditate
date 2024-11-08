@@ -19,6 +19,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "icon": "./assets/meditation_logo.png",
       "package": "com.shruthik_shetty.meditate"
     },
     "web": {

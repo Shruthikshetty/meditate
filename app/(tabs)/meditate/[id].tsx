@@ -67,7 +67,6 @@ const Meditate = () => {
     const sound = audioSound ? audioSound : await initialSound();
     const status = await sound?.getStatusAsync();
     if (status?.isLoaded && !isPlayingAudio) {
-      console.log("playing");
       await sound.playAsync();
       setPlayingAudio(true);
     } else {

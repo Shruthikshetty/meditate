@@ -7,12 +7,14 @@ import BackIcon from "@expo/vector-icons/AntDesign";
 import CustomButton from "@/components/CustomButton";
 import { Audio } from "expo-av";
 import { MEDITATION_DATA, AUDIO_FILES } from "@/constants/meditation-data";
+import TimeModal from "@/components/TimeModal";
 const Meditate = () => {
   const { id } = useLocalSearchParams();
-  const [secRemaining, setSecRemaining] = useState(90);
+  const [secRemaining, setSecRemaining] = useState(10);
   const [isMeditating, setMeditating] = useState(false);
   const [audioSound, setSound] = useState<Audio.Sound>();
   const [isPlayingAudio, setPlayingAudio] = useState(false);
+  const [timemodalVisible, setTimeModalVisible] = useState(false);
 
   useEffect(() => {
     let timerId: NodeJS.Timeout;
@@ -64,7 +66,6 @@ const Meditate = () => {
   async function toggleSound() {
     const sound = audioSound ? audioSound : await initialSound();
     const status = await sound?.getStatusAsync();
-    console.log("playingstatus -----> ", status);
     if (status?.isLoaded && !isPlayingAudio) {
       console.log("playing");
       await sound.playAsync();
@@ -95,12 +96,17 @@ const Meditate = () => {
               </Text>
             </View>
           </View>
-          <View className="mb-5">
+          <View className="mb-5 gap-[2vh]">
+            <CustomButton
+              title="Set time"
+              handlePress={()=> setTimeModalVisible(true)}
+            />
             <CustomButton
               title="Start Meditation"
               handlePress={toggleMeditationSessionStatus}
             />
           </View>
+          <TimeModal visible={timemodalVisible} handleTime={setSecRemaining} handleVisible={setTimeModalVisible}/>
         </AppGradient>
       </ImageBackground>
     </View>

@@ -16,7 +16,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/meditation_logo.png",
         "backgroundColor": "#ffffff"
       },
       "icon": "./assets/meditation_logo.png",
